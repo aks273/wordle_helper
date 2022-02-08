@@ -26,4 +26,6 @@ If there are no matches, it will tell you.
 In wordle we also know the positions in a word that a character is not in, for example A is in a word but not in the second position.
 This information could be captured, but the difficulty here is finding an elegant way to pass this into the program.
 
+Maybe we could pass the allowed and disallowed words with flags `--allowed` and `--disallowed` to make usage slightly easier? This removes the need for the `-`s. We could probably add a third flag to be called multiple times (`--allowed-without`) which goes and checks whether a letter is in the word but not at a particular position.
+
 My dictionary and wordle's dictionary aren't necessarily the same - there could be words in one and not the other. Hopefully this doesn't cause any confusion!
