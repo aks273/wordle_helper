@@ -19,8 +19,8 @@ Argument 3. A list of characters that are not in the word
 
 
 def check_regex(regex): # returns a bool
-    __allowed = set(string.ascii_lowercase + '-')
-    return len(regex) == 5 and set(regex) <= __allowed
+    allowed = set(string.ascii_lowercase + '-')
+    return len(regex) == 5 and set(regex) <= allowed
 
 
 def check_allowed_disallowed(allowed, disallowed): # returns a bool
@@ -85,7 +85,7 @@ def main():
         print("\n".join(word_list))
     else:
         print("Valid input, but no words with this combo!")
-        print("Let me know if you solve this and I need to update the dictionary")
+        print("Let me know if you solve this and I need to update the dictionary.")
 
 
 if __name__ == "__main__":
