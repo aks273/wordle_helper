@@ -3,15 +3,17 @@ import sys
 import string
 
 usage_str = """
-Error - usage! Please provide three arguments.
+Error - usage! Please use as described below.
 e.g. `python wordle-helper.py ----- abc def`
 
-1. A five character "regex" containing the positions of correctly placed characters
+Argument 1. A five character "regex" containing the positions of correctly placed characters
     - ----- means we know no correctly placed characters
     - -t--- means we know that "t" is the second character
-2. A list of characters that are in the word but we don't know the position
+Argument 2. A list of characters that are in the word but we don't know the position
+    - This argument must only contain letters
     - If there are no characters we know are in the word, enter "-"
-3. A list of characters that are not in the word
+Argument 3. A list of characters that are not in the word
+    - This argument must only contain letters
     - If there are no characters we know are not in the word, enter "-"
 """
 
@@ -22,7 +24,7 @@ def check_regex(regex): # returns a bool
 
 
 def check_allowed_dissallowed(allowed, disallowed): # returns a bool
-    return allowed.isalpha() or allowed == "-" and disallowed.isalpha() or disallowed == "-"
+    return (allowed.isalpha() or allowed == "-") and (disallowed.isalpha() or disallowed == "-")
 
 
 def filter_fixed_chars(fixed_chars, word_list):
@@ -56,8 +58,19 @@ def filter_disallowed_chars(disallowed_chars, word_list):
 def main():
     argv = list(map(str.lower, sys.argv))
 
-    if len(argv) != 4 or not check_regex(argv[1]) or not check_allowed_dissallowed(argv[2], argv[3]):
+    if len(argv) != 4:
         print(usage_str)
+        print("Incorrect number of arguments!")
+        sys.exit(1)
+
+    if not check_regex(argv[1]):
+        print(usage_str)
+        print("Incorrect fixed characters argument!")
+        sys.exit(1)
+
+    if not check_allowed_dissallowed(argv[2], argv[3]):
+        print(usage_str)
+        print("Incorrect allowed or disallowed characters argument!")
         sys.exit(1)
 
     word_file = open("data/five-letter-words.txt", "r")
