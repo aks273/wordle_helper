@@ -75,6 +75,7 @@ def main():
 
     word_file = open("data/five-letter-words.txt", "r")
     word_list = word_file.read().splitlines()
+    word_file.close()
 
     word_list = filter_fixed_chars(argv[1], word_list)
     word_list = filter_allowed_chars(argv[2], word_list)
