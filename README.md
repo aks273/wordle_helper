@@ -7,7 +7,7 @@ This is a script to use when you're struggling with wordle and need some help.
 The script is run with three arguments:
 1. A five character "regex" containing the positions of correctly placed characters
     - `-----` means we know no correctly placed characters
-    - `-t--- `means we know that "t" is the second character
+    - `-t---` means we know that "t" is the second character
 2. A list of characters that are in the word but we don't know the position
     - If there are no characters we know are in the word, enter `-`
 3. A list of characters that are not in the word
