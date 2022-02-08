@@ -26,4 +26,4 @@ If there are no matches, it will tell you.
 In wordle we also know the positions in a word that a character is not in, for example A is in a word but not in the second position.
 This information could be captured, but the difficulty here is finding an elegant way to pass this into the program.
 
-The list of words in the dictionary that I use may contain words that are not in wordle's dictionary. Hopefully this doesn't cause any confusion!
+My dictionary and wordle's dictionary aren't necessarily the same - there could be words in one and not the other. Hopefully this doesn't cause any confusion!
