@@ -23,7 +23,7 @@ def check_regex(regex): # returns a bool
     return len(regex) == 5 and set(regex) <= __allowed
 
 
-def check_allowed_dissallowed(allowed, disallowed): # returns a bool
+def check_allowed_disallowed(allowed, disallowed): # returns a bool
     return (allowed.isalpha() or allowed == "-") and (disallowed.isalpha() or disallowed == "-")
 
 
@@ -68,7 +68,7 @@ def main():
         print("Incorrect fixed characters argument!")
         sys.exit(1)
 
-    if not check_allowed_dissallowed(argv[2], argv[3]):
+    if not check_allowed_disallowed(argv[2], argv[3]):
         print(usage_str)
         print("Incorrect allowed or disallowed characters argument!")
         sys.exit(1)
