@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.App-content-row:after {
+  content: "";
+  display: table;
+  clear: both;
+  margin: 10px;
+}
+
+.fixed-input {
+  width: 15%;
+}
+
+
