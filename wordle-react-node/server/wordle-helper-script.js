@@ -17,7 +17,7 @@ module.exports = {
         // This could also be done inside of the 
 
         let data = fs.readFileSync(
-            path.resolve("server/five-letter-words.txt"),
+            path.resolve("five-letter-words.txt"),
             { encoding: "utf8", flag: "r"}
         );
 
